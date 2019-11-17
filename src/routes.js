@@ -24,6 +24,10 @@ import Maps from "views/Maps.jsx";
 import Notifications from "views/Notifications.jsx";
 import Upgrade from "views/Upgrade.jsx";
 
+// user components
+import UserLoginView from "views/user/UserLogin"
+import UserRegisterView from "views/user/UserRegister"
+
 const dashboardRoutes = [
   {
     path: "/dashboard",
@@ -81,6 +85,24 @@ const dashboardRoutes = [
     icon: "pe-7s-rocket",
     component: Upgrade,
     layout: "/admin"
+  },
+
+  // route user
+  {
+    upgrade: true,
+    path: "/login",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: UserLoginView,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/register",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: UserRegisterView,
+    layout: ""
   }
 ];
 
