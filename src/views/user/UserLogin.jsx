@@ -2,9 +2,7 @@ import React, { Component } from "react";
 
 import {Grid, Row, Col} from 'react-bootstrap'
 
-import UserNavbar from '../../user_components/common/UserNavbar'
 import UserLoginForm from '../../user_components/login_and_register/UserLoginForm'
-import Footer from '../../user_components/common/Footer'
 import Guide from '../../user_components/login_and_register/Guide'
 
 class UserLoginView extends Component {
