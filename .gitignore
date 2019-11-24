@@ -1,2 +1,11 @@
+# packages manager
 package-lock.json
+yarn.lock
 node_modules/
+
+# ide
+.vscode
+.idea
+
+# personal code quality configs
+.prettierrc
