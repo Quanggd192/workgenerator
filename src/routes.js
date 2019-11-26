@@ -27,8 +27,9 @@ import Upgrade from "views/Upgrade.jsx";
 // user components
 import UserLoginView from "views/user/UserLogin"
 import UserRegisterView from "views/user/UserRegister"
-import HomaPage from "views/user/Home"
-import HomePage from "views/user/Home";
+import HomePage from "views/user/Home"
+import AboutUs from "views/user/AboutUs"
+import ContactUs from "views/user/ContactUs"
 
 const dashboardRoutes = [
   {
@@ -90,14 +91,7 @@ const dashboardRoutes = [
   },
 
   // route user
-  {
-    upgrade: true,
-    path: "/",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
-    component: HomePage,
-    layout: ""
-  },
+  
   {
     upgrade: true,
     path: "/login",
@@ -112,6 +106,30 @@ const dashboardRoutes = [
     name: "Upgrade to PRO",
     icon: "pe-7s-rocket",
     component: UserRegisterView,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/about-us",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: AboutUs,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/contact-us",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: ContactUs,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: HomePage,
     layout: ""
   }
 ];

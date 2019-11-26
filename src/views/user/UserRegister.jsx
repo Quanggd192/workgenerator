@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import {Grid, Row, Col} from 'react-bootstrap'
 
-import UserNavbar from '../../user_components/common/UserNavbar'
 import UserRegisterForm from '../../user_components/login_and_register/UserRegisterForm'
 import Guide from '../../user_components/login_and_register/Guide'
 

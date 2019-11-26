@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
-import { Grid, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Row, Col } from 'react-bootstrap'
 
 import JobItem from 'user_components/home/JobItems'
 
@@ -9,9 +8,7 @@ class SpotlightJobs extends Component {
 
     render(){
         // fake data
-        const data = [
-
-        ]
+        
         const bannerStyle = {
             fontSize: '17px',
             margin: 'auto',
@@ -25,13 +22,13 @@ class SpotlightJobs extends Component {
         let listJobElements = []
         for(let i=0; i<18; i++){
             listJobElements.push(
-                <Col style={{padding: `0 5px 0 5px`}} md={4}>
+                <Col key={i} style={{padding: `0 5px 0 5px`}} md={4}>
                     <JobItem/>
                 </Col>
             )
         }
         return(
-            <div>
+            <div style={{ paddingBottom: `50px`}}>
                 <Row>
                     <Col md={12} style={{}}>
                         <div style={bannerStyle}>

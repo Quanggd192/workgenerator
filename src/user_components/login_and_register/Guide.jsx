@@ -27,7 +27,7 @@ class Guide extends Component {
                     4. Ứng tuyển các việc làm hot ngay trên Work Generator<br/>
                 </div>
                 <div style={{textAlign: `center`, paddingTop: `30px`}}>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tCzvYMW-jO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div>
+                    <iframe title="guide-video" width="560" height="315" src="https://www.youtube.com/embed/tCzvYMW-jO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div>
                 </div>
         )
     }

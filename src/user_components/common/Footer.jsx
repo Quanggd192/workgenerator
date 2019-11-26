@@ -8,7 +8,7 @@ class Footer extends Component {
             color: `#666`,
             borderTop: `solid 1px #999`,
             paddingTop: `25px`,
-            textAlign: `center`
+            textAlign: `center`,
         }
         return(
             <Grid style={footerStyle}>

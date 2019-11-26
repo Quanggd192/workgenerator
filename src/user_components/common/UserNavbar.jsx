@@ -16,13 +16,12 @@ class UserNavbar extends Component {
     }
   }
     componentWillMount(){
-        console.log(Nav)
     }
     render(){
       let navItems = []
         for(let i=0; i<this.state.navItems.length; i++){
           navItems.push(
-          <NavItem eventKey={i+1} href={this.state.navItems[i].link}>
+          <NavItem eventKey={i+1} key={i+1} href={this.state.navItems[i].link}>
             {this.state.navItems[i].key}
           </NavItem>)
         }

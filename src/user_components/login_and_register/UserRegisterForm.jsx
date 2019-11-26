@@ -4,10 +4,7 @@ import { Form,Button, FormGroup, Col, FormControl, ControlLabel, Checkbox} from 
 import { Link } from 'react-router-dom'
 
 class UserRegisterForm extends Component {
-    constructor(props){
-        super(props)
-    }
-
+    
     render(){
         const formTitleStyle = {
             fontSize: `20px`,

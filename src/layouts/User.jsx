@@ -2,11 +2,9 @@ import React, { Component } from "react";
 
 import routes from "routes.js"
 
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import UserNavbar from 'user_components/common/UserNavbar'
 import Footer from 'user_components/common/Footer'
-import UserLoginView from 'views/user/UserLogin'
-import UserRegisterView from 'views/user/UserRegister'
 
 class UserLayout extends Component {
 

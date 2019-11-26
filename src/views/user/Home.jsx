@@ -6,9 +6,6 @@ import SlideBar from 'user_components/common/SlideBar'
 import SpotlightJobs from 'user_components/home/SpotlightJobs'
 
 class HomePage extends Component {
-    constructor(props){
-        super(props)
-    }
 
     render(){
         const containerStyle = {
