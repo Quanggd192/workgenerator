@@ -1,10 +1,53 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Table } from 'react-bootstrap';
+import { Grid, Row, Col, Table, Pagination } from 'react-bootstrap';
 
 import Card from 'components/Card/Card';
 
-export default class Freelancers extends Component {
+export default class Employers extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      table: {
+        title: 'Employers Table',
+        subtitle: 'You can find all our employers here',
+        pagesCount: 27,
+        limit: 10,
+        offset: 3,
+      },
+    };
+  }
+
+  renderPagination() {
+    const { table } = this.state;
+
+    const items = [];
+    for (let i = table.offset - 2; i < table.offset + 3; i++) {
+      if (i >= 0) {
+        items.push(
+          <Pagination.Item key={i} active={i === table.offset}>
+            {i + 1}
+          </Pagination.Item>
+        );
+      }
+    }
+    if (table.offset >= 2) {
+      items.unshift(<Pagination.Ellipsis></Pagination.Ellipsis>);
+      items.unshift(<Pagination.Prev></Pagination.Prev>);
+      items.unshift(<Pagination.First></Pagination.First>);
+    }
+    if (table.offset <= table.pagesCount - 3) {
+      items.push(<Pagination.Ellipsis></Pagination.Ellipsis>);
+      items.push(<Pagination.Next></Pagination.Next>);
+      items.push(<Pagination.Last></Pagination.Last>);
+    }
+
+    return <Pagination bsSize="medium">{items}</Pagination>;
+  }
+
   render() {
+    const { table } = this.state;
+
     const columns = ['ID', 'Name', 'E-mail', 'Prefered Skills', 'Country', 'Open'];
 
     const freelancerPropsArr = [
@@ -12,51 +55,61 @@ export default class Freelancers extends Component {
         id: 1,
         name: 'Dakota Rice',
         email: 'DakotaRice@abc.def',
-        skills: 'Writing',
         country: 'Niger',
-        status: false,
+        openJobs: 6,
+        paidAmount: 3000,
       },
       {
         id: 2,
-        name: 'Minerva Hooper',
-        email: 'MinervaHooper@abc.def',
-        skills: 'Android',
-        country: 'Curaçao',
-        status: false,
+        name: 'Dakota Rice',
+        email: 'DakotaRice@abc.def',
+        country: 'Niger',
+        openJobs: 6,
+        paidAmount: 3000,
       },
       {
         id: 3,
-        name: 'Sage Rodriguez',
-        email: 'SageRodriguez@abc.def',
-        skills: 'iOS',
-        country: 'Netherlands',
-        status: true,
+        name: 'Dakota Rice',
+        email: 'DakotaRice@abc.def',
+        country: 'Niger',
+        openJobs: 6,
+        paidAmount: 3000,
       },
       {
         id: 4,
-        name: 'Philip Chaney',
-        email: 'PhilipChaney@abc.def',
-        skills: 'Web',
-        country: 'South Korea',
-        status: false,
+        name: 'Dakota Rice',
+        email: 'DakotaRice@abc.def',
+        country: 'Niger',
+        openJobs: 6,
+        paidAmount: 3000,
       },
       {
         id: 5,
-        name: 'Doris Greene',
-        email: 'DorisGreene@abc.def',
-        skills: 'Desktop',
-        country: 'Malawi',
-        status: false,
+        name: 'Dakota Rice',
+        email: 'DakotaRice@abc.def',
+        country: 'Niger',
+        openJobs: 6,
+        paidAmount: 3000,
       },
       {
         id: 6,
-        name: 'Mason Porter',
-        email: 'MasonPorter@abc.def',
-        skills: 'Business Analysis',
-        country: 'Chile',
-        status: true,
+        name: 'Dakota Rice',
+        email: 'DakotaRice@abc.def',
+        country: 'Niger',
+        openJobs: 6,
+        paidAmount: 3000,
+      },
+      {
+        id: 7,
+        name: 'Dakota Rice',
+        email: 'DakotaRice@abc.def',
+        country: 'Niger',
+        openJobs: 6,
+        paidAmount: 3000,
       },
     ];
+
+    const pagination = this.renderPagination();
 
     return (
       <div className="content">
@@ -64,8 +117,8 @@ export default class Freelancers extends Component {
           <Row>
             <Col md={12}>
               <Card
-                title="Job Seekers Table"
-                category="You can find all our talents here"
+                title={table.title}
+                category={table.subtitle}
                 ctTableFullWidth
                 ctTableResponsive
                 content={
@@ -109,6 +162,7 @@ export default class Freelancers extends Component {
                     </tbody>
                   </Table>
                 }
+                legend={pagination}
               />
             </Col>
           </Row>

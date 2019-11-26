@@ -29,6 +29,7 @@ import UserLoginView from 'views/user/UserLogin';
 import UserRegisterView from 'views/user/UserRegister';
 import HomePage from 'views/user/Home';
 import Freelancers from 'views/Freelancers';
+import Employers from 'views/Employers';
 
 const dashboardRoutes = [
   // admin
@@ -94,6 +95,13 @@ const dashboardRoutes = [
     name: 'View Job Seekers',
     icon: 'pe-7s-rocket',
     component: Freelancers,
+    layout: '/admin',
+  },
+  {
+    path: '/employers',
+    name: 'View Employers',
+    icon: 'pe-7s-rocket',
+    component: Employers,
     layout: '/admin',
   },
   // route user
