@@ -15,30 +15,28 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export class Card extends Component {
   render() {
     return (
-      <div className={"card" + (this.props.plain ? " card-plain" : "")}>
-        <div className={"header" + (this.props.hCenter ? " text-center" : "")}>
+      <div className={`card${this.props.plain ? ' card-plain' : ''}`}>
+        <div className={`header${this.props.hCenter ? ' text-center' : ''}`}>
           <h4 className="title">{this.props.title}</h4>
           <p className="category">{this.props.category}</p>
         </div>
         <div
-          className={
-            "content" +
-            (this.props.ctAllIcons ? " all-icons" : "") +
-            (this.props.ctTableFullWidth ? " table-full-width" : "") +
-            (this.props.ctTableResponsive ? " table-responsive" : "") +
-            (this.props.ctTableUpgrade ? " table-upgrade" : "")
-          }
+          className={`content${this.props.ctAllIcons ? ' all-icons' : ''}${
+            this.props.ctTableFullWidth ? ' table-full-width' : ''
+          }${this.props.ctTableResponsive ? ' table-responsive' : ''}${
+            this.props.ctTableUpgrade ? ' table-upgrade' : ''
+          }`}
         >
           {this.props.content}
 
-          <div className="footer">
+          <div className="footer text-center">
             {this.props.legend}
-            {this.props.stats != null ? <hr /> : ""}
+            {this.props.stats != null ? <hr /> : ''}
             <div className="stats">
               <i className={this.props.statsIcon} /> {this.props.stats}
             </div>
