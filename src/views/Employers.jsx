@@ -48,7 +48,7 @@ export default class Employers extends Component {
   render() {
     const { table } = this.state;
 
-    const columns = ['ID', 'Name', 'E-mail', 'Prefered Skills', 'Country', 'Open'];
+    const columns = ['ID', 'Name', 'E-mail', 'Open Jobs', 'Country', 'Money Paid'];
 
     const freelancerPropsArr = [
       {
@@ -143,19 +143,9 @@ export default class Employers extends Component {
                             <td>{prop.id}</td>
                             <td>{prop.name}</td>
                             <td>{prop.email}</td>
-                            <td>{prop.skills}</td>
+                            <td>{prop.openJobs}</td>
                             <td>{prop.country}</td>
-                            <td>
-                              {prop.status ? (
-                                <h4 className="m-0">
-                                  <i className="pe-7s-check text-success" />
-                                </h4>
-                              ) : (
-                                <h4 className="m-0">
-                                  <i className="pe-7s-close text-danger" />
-                                </h4>
-                              )}
-                            </td>
+                            <td>{prop.paidAmount}</td>
                           </tr>
                         );
                       })}

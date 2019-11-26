@@ -104,15 +104,8 @@ const dashboardRoutes = [
     component: Employers,
     layout: '/admin',
   },
+
   // route user
-  {
-    upgrade: true,
-    path: '/',
-    name: 'Upgrade to PRO',
-    icon: 'pe-7s-rocket',
-    component: HomePage,
-    layout: '',
-  },
   {
     upgrade: true,
     path: '/login',
