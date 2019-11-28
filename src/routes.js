@@ -146,7 +146,6 @@ const dashboardRoutes = [
   },
   {
     upgrade: true,
-<<<<<<< HEAD
     path: "/profile",
     name: "Upgrade to PRO",
     icon: "pe-7s-rocket",
@@ -158,11 +157,6 @@ const dashboardRoutes = [
     path: "/",
     name: "Upgrade to PRO",
     icon: "pe-7s-rocket",
-=======
-    path: '/',
-    name: 'Upgrade to PRO',
-    icon: 'pe-7s-rocket',
->>>>>>> f4526f7e07887b3345d44ce12d9fb4ee76e9d464
     component: HomePage,
     layout: '',
   },
