@@ -18,7 +18,7 @@
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+// import store from './store'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';

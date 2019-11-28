@@ -16,7 +16,6 @@
 
 */
 import Dashboard from 'views/Dashboard';
-import UserProfile from 'views/UserProfile';
 import TableList from 'views/TableList';
 import Typography from 'views/Typography';
 import Icons from 'views/Icons';
@@ -27,10 +26,14 @@ import Upgrade from 'views/Upgrade';
 // user components
 import UserLoginView from "views/user/UserLogin"
 import UserRegisterView from "views/user/UserRegister"
+import UserProfile from 'views/UserProfile';
 import HomePage from "views/user/Home"
 import AboutUs from "views/user/AboutUs"
 import ContactUs from "views/user/ContactUs"
+
+// admin components
 import Freelancers from 'views/Freelancers';
+
 
 const dashboardRoutes = [
   // admin
@@ -130,6 +133,14 @@ const dashboardRoutes = [
     name: "Upgrade to PRO",
     icon: "pe-7s-rocket",
     component: ContactUs,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/profile",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: UserProfile,
     layout: ""
   },
   {
