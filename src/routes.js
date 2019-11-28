@@ -33,6 +33,7 @@ import ContactUs from "views/user/ContactUs"
 
 // admin components
 import Freelancers from 'views/Freelancers';
+import Employers from 'views/Employers';
 
 
 const dashboardRoutes = [
@@ -101,42 +102,51 @@ const dashboardRoutes = [
     component: Freelancers,
     layout: '/admin',
   },
+  {
+    path: '/employers',
+    name: 'View Employers',
+    icon: 'pe-7s-rocket',
+    component: Employers,
+    layout: '/admin',
+  },
+
   // route user
-  
   {
     upgrade: true,
-    path: "/login",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/login',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: UserLoginView,
-    layout: ""
+    layout: '',
   },
+  // route user
   {
     upgrade: true,
-    path: "/register",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/register',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: UserRegisterView,
-    layout: ""
+    layout: '',
   },
   {
     upgrade: true,
-    path: "/about-us",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/about-us',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: AboutUs,
-    layout: ""
+    layout: '',
   },
   {
     upgrade: true,
-    path: "/contact-us",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/contact-us',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: ContactUs,
-    layout: ""
+    layout: '',
   },
   {
     upgrade: true,
+<<<<<<< HEAD
     path: "/profile",
     name: "Upgrade to PRO",
     icon: "pe-7s-rocket",
@@ -148,9 +158,14 @@ const dashboardRoutes = [
     path: "/",
     name: "Upgrade to PRO",
     icon: "pe-7s-rocket",
+=======
+    path: '/',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
+>>>>>>> f4526f7e07887b3345d44ce12d9fb4ee76e9d464
     component: HomePage,
-    layout: ""
-  }
+    layout: '',
+  },
 ];
 
 export default dashboardRoutes;

@@ -2,11 +2,62 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Table } from 'react-bootstrap';
 
 import Card from 'components/Card/Card';
-import { freelancerPropsArr } from 'variables/Variables';
 
 export default class Freelancers extends Component {
   render() {
     const columns = ['ID', 'Name', 'E-mail', 'Prefered Skills', 'Country', 'Open'];
+
+    const freelancerPropsArr = [
+      {
+        id: 1,
+        name: 'Dakota Rice',
+        email: 'DakotaRice@abc.def',
+        skills: 'Writing',
+        country: 'Niger',
+        status: false,
+      },
+      {
+        id: 2,
+        name: 'Minerva Hooper',
+        email: 'MinervaHooper@abc.def',
+        skills: 'Android',
+        country: 'Curaçao',
+        status: false,
+      },
+      {
+        id: 3,
+        name: 'Sage Rodriguez',
+        email: 'SageRodriguez@abc.def',
+        skills: 'iOS',
+        country: 'Netherlands',
+        status: true,
+      },
+      {
+        id: 4,
+        name: 'Philip Chaney',
+        email: 'PhilipChaney@abc.def',
+        skills: 'Web',
+        country: 'South Korea',
+        status: false,
+      },
+      {
+        id: 5,
+        name: 'Doris Greene',
+        email: 'DorisGreene@abc.def',
+        skills: 'Desktop',
+        country: 'Malawi',
+        status: false,
+      },
+      {
+        id: 6,
+        name: 'Mason Porter',
+        email: 'MasonPorter@abc.def',
+        skills: 'Business Analysis',
+        country: 'Chile',
+        status: true,
+      },
+    ];
+
     return (
       <div className="content">
         <Grid fluid>
