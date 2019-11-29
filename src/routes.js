@@ -30,11 +30,13 @@ import UserProfile from 'views/UserProfile';
 import HomePage from "views/user/Home"
 import AboutUs from "views/user/AboutUs"
 import ContactUs from "views/user/ContactUs"
+import UserProfileClinent from "views/user/UserProfile"
+import ListJob from "views/user/ListJob"
+import ListCompany from "views/user/ListCompany"
 
 // admin components
 import Freelancers from 'views/Freelancers';
 import Employers from 'views/Employers';
-
 
 const dashboardRoutes = [
   // admin
@@ -119,7 +121,6 @@ const dashboardRoutes = [
     component: UserLoginView,
     layout: '',
   },
-  // route user
   {
     upgrade: true,
     path: '/register',
@@ -146,10 +147,26 @@ const dashboardRoutes = [
   },
   {
     upgrade: true,
+    path: "/jobs",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: ListJob,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/companies",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: ListCompany,
+    layout: ""
+  },
+  {
+    upgrade: true,
     path: "/profile",
     name: "Upgrade to PRO",
     icon: "pe-7s-rocket",
-    component: UserProfile,
+    component: UserProfileClinent,
     layout: ""
   },
   {
