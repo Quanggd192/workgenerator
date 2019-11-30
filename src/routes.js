@@ -33,6 +33,7 @@ import ContactUs from "views/user/ContactUs"
 import UserProfileClinent from "views/user/UserProfile"
 import ListJob from "views/user/ListJob"
 import ListCompany from "views/user/ListCompany"
+import JobDetail from "views/user/JobDetail"
 
 // admin components
 import Freelancers from 'views/Freelancers';
@@ -167,6 +168,14 @@ const dashboardRoutes = [
     name: "Upgrade to PRO",
     icon: "pe-7s-rocket",
     component: UserProfileClinent,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/job-detail",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: JobDetail,
     layout: ""
   },
   {
