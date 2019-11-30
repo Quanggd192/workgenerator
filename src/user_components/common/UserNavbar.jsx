@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar, Nav, NavDropdown, NavItem, MenuItem } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, NavItem, MenuItem, FormGroup, FormControl, Button } from 'react-bootstrap'
 
 class UserNavbar extends Component {
   constructor(props){
@@ -16,13 +16,12 @@ class UserNavbar extends Component {
     }
   }
     componentWillMount(){
-        console.log(Nav)
     }
     render(){
       let navItems = []
         for(let i=0; i<this.state.navItems.length; i++){
           navItems.push(
-          <NavItem eventKey={i+1} href={this.state.navItems[i].link}>
+          <NavItem eventKey={i+1} key={i+1} href={this.state.navItems[i].link}>
             {this.state.navItems[i].key}
           </NavItem>)
         }
@@ -44,6 +43,16 @@ class UserNavbar extends Component {
       <MenuItem divider />
       <MenuItem eventKey={3.4}>Separated link</MenuItem>
     </NavDropdown>
+    <FormGroup>
+        <FormControl style={{marginTop: 10}} type="text" placeholder="Search" />
+      </FormGroup>{' '}
+      <div style={{width: "auto", textAlign: "right"}}>
+        <Button style={{marginTop: 10, border: "solid 1px"}} type="button">Search</Button>
+      </div>
+      <div style={{width: 150, textAlign: "right"}}>
+        <Button style={{marginTop: 10, border: "solid 1px #f29393", color: "#f29393", float: "right"}} type="button">Log out</Button>
+      </div>
+
   </Nav>
 </Navbar>
         )

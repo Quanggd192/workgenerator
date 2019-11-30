@@ -3,9 +3,6 @@ import React, { Component } from 'react'
 import { Form,Button, FormGroup, Col, FormControl, ControlLabel, Checkbox} from 'react-bootstrap'
 
 class UserLoginForm extends Component {
-    constructor(props){
-        super(props)
-    }
 
     render(){
         const formTitleStyle = {

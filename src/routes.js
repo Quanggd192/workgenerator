@@ -16,7 +16,6 @@
 
 */
 import Dashboard from 'views/Dashboard';
-import UserProfile from 'views/UserProfile';
 import TableList from 'views/TableList';
 import Typography from 'views/Typography';
 import Icons from 'views/Icons';
@@ -25,9 +24,17 @@ import Notifications from 'views/Notifications';
 import Upgrade from 'views/Upgrade';
 
 // user components
-import UserLoginView from 'views/user/UserLogin';
-import UserRegisterView from 'views/user/UserRegister';
-import HomePage from 'views/user/Home';
+import UserLoginView from "views/user/UserLogin"
+import UserRegisterView from "views/user/UserRegister"
+import UserProfile from 'views/UserProfile';
+import HomePage from "views/user/Home"
+import AboutUs from "views/user/AboutUs"
+import ContactUs from "views/user/ContactUs"
+import UserProfileClinent from "views/user/UserProfile"
+import ListJob from "views/user/ListJob"
+import ListCompany from "views/user/ListCompany"
+
+// admin components
 import Freelancers from 'views/Freelancers';
 import Employers from 'views/Employers';
 import EmployerRequests from 'views/EmployerRequests';
@@ -85,6 +92,54 @@ const dashboardRoutes = [
     name: 'Upgrade to PRO',
     icon: 'pe-7s-rocket',
     component: UserRegisterView,
+    layout: '',
+  },
+  {
+    upgrade: true,
+    path: '/about-us',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
+    component: AboutUs,
+    layout: '',
+  },
+  {
+    upgrade: true,
+    path: '/contact-us',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
+    component: ContactUs,
+    layout: '',
+  },
+  {
+    upgrade: true,
+    path: "/jobs",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: ListJob,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/companies",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: ListCompany,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/profile",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: UserProfileClinent,
+    layout: ""
+  },
+  {
+    upgrade: true,
+    path: "/",
+    name: "Upgrade to PRO",
+    icon: "pe-7s-rocket",
+    component: HomePage,
     layout: '',
   },
 ];

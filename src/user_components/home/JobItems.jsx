@@ -4,6 +4,8 @@ import { Grid, Row, Col } from 'react-bootstrap'
 import { FaDollarSign } from 'react-icons/fa'
 import { GiPositionMarker } from 'react-icons/gi'
 
+import cssClasses from 'main.module.css'
+
 class JobItem extends Component {
     render(){
         // Css
@@ -49,7 +51,7 @@ class JobItem extends Component {
         }
         return(
             <div style={containerStyle}>
-                <img style={avatarStyle} src='https://img2.thuthuatphanmem.vn/uploads/2018/12/14/icon-facebook-buon-dep_110448435.jpg'/>
+                <img alt="a" style={avatarStyle} src='https://img2.thuthuatphanmem.vn/uploads/2018/12/14/icon-facebook-buon-dep_110448435.jpg'/>
                 <div style={jobInfoBoxStyle}>
                     <div style={jobTitleStyle}>
                         Skin care Doctor
@@ -70,7 +72,7 @@ class JobItem extends Component {
                             <div style={iconStyle}>
                                 <GiPositionMarker/>
                             </div>
-                            <div style={salaryRangeStyle}>
+                            <div style={salaryRangeStyle} className={cssClasses.overFlowEllipsis}>
                                 Hà Nội, Việt nam ksjfjaisfjisjfijsif
                             </div>
                         </Col>
