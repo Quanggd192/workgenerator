@@ -30,6 +30,7 @@ import UserRegisterView from 'views/user/UserRegister';
 import HomePage from 'views/user/Home';
 import Freelancers from 'views/Freelancers';
 import Employers from 'views/Employers';
+import EmployerRequests from 'views/EmployerRequests';
 
 const dashboardRoutes = [
   // admin
@@ -45,13 +46,6 @@ const dashboardRoutes = [
     name: 'User Profile',
     icon: 'pe-7s-user',
     component: UserProfile,
-    layout: '/admin',
-  },
-  {
-    path: '/table',
-    name: 'Table List',
-    icon: 'pe-7s-note2',
-    component: TableList,
     layout: '/admin',
   },
   {
@@ -102,6 +96,13 @@ const dashboardRoutes = [
     name: 'View Employers',
     icon: 'pe-7s-rocket',
     component: Employers,
+    layout: '/admin',
+  },
+  {
+    path: '/requests',
+    name: 'Employer Requests',
+    icon: 'pe-7s-rocket',
+    component: EmployerRequests,
     layout: '/admin',
   },
 

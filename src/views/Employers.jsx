@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Table, Pagination } from 'react-bootstrap';
+import { Grid, Row, Col, Table } from 'react-bootstrap';
 
 import Card from 'components/Card/Card';
+import CustomPagination from 'components/CustomPagination';
 
 export default class Employers extends Component {
   constructor() {
@@ -11,44 +12,14 @@ export default class Employers extends Component {
       table: {
         title: 'Employers Table',
         subtitle: 'You can find all our employers here',
-        pagesCount: 27,
-        limit: 10,
-        offset: 3,
       },
     };
-  }
-
-  renderPagination() {
-    const { table } = this.state;
-
-    const items = [];
-    for (let i = table.offset - 2; i < table.offset + 3; i++) {
-      if (i >= 0) {
-        items.push(
-          <Pagination.Item key={i} active={i === table.offset}>
-            {i + 1}
-          </Pagination.Item>
-        );
-      }
-    }
-    if (table.offset >= 2) {
-      items.unshift(<Pagination.Ellipsis></Pagination.Ellipsis>);
-      items.unshift(<Pagination.Prev></Pagination.Prev>);
-      items.unshift(<Pagination.First></Pagination.First>);
-    }
-    if (table.offset <= table.pagesCount - 3) {
-      items.push(<Pagination.Ellipsis></Pagination.Ellipsis>);
-      items.push(<Pagination.Next></Pagination.Next>);
-      items.push(<Pagination.Last></Pagination.Last>);
-    }
-
-    return <Pagination bsSize="medium">{items}</Pagination>;
   }
 
   render() {
     const { table } = this.state;
 
-    const columns = ['ID', 'Name', 'E-mail', 'Open Jobs', 'Country', 'Money Paid'];
+    const columns = ['ID', 'Name', 'E-mail', 'Open Jobs', 'Country', 'Money Paid', 'Open'];
 
     const freelancerPropsArr = [
       {
@@ -58,6 +29,7 @@ export default class Employers extends Component {
         country: 'Niger',
         openJobs: 6,
         paidAmount: 3000,
+        status: false,
       },
       {
         id: 2,
@@ -66,6 +38,7 @@ export default class Employers extends Component {
         country: 'Niger',
         openJobs: 6,
         paidAmount: 3000,
+        status: false,
       },
       {
         id: 3,
@@ -74,6 +47,7 @@ export default class Employers extends Component {
         country: 'Niger',
         openJobs: 6,
         paidAmount: 3000,
+        status: true,
       },
       {
         id: 4,
@@ -82,6 +56,7 @@ export default class Employers extends Component {
         country: 'Niger',
         openJobs: 6,
         paidAmount: 3000,
+        status: true,
       },
       {
         id: 5,
@@ -90,6 +65,7 @@ export default class Employers extends Component {
         country: 'Niger',
         openJobs: 6,
         paidAmount: 3000,
+        status: false,
       },
       {
         id: 6,
@@ -98,6 +74,7 @@ export default class Employers extends Component {
         country: 'Niger',
         openJobs: 6,
         paidAmount: 3000,
+        status: true,
       },
       {
         id: 7,
@@ -106,10 +83,9 @@ export default class Employers extends Component {
         country: 'Niger',
         openJobs: 6,
         paidAmount: 3000,
+        status: false,
       },
     ];
-
-    const pagination = this.renderPagination();
 
     return (
       <div className="content">
@@ -146,13 +122,24 @@ export default class Employers extends Component {
                             <td>{prop.openJobs}</td>
                             <td>{prop.country}</td>
                             <td>{prop.paidAmount}</td>
+                            <td>
+                              {prop.status ? (
+                                <h4 className="m-0">
+                                  <i className="pe-7s-check text-success" />
+                                </h4>
+                              ) : (
+                                <h4 className="m-0">
+                                  <i className="pe-7s-close text-danger" />
+                                </h4>
+                              )}
+                            </td>
                           </tr>
                         );
                       })}
                     </tbody>
                   </Table>
                 }
-                legend={pagination}
+                legend={<CustomPagination limit={10} itemsCount={270} offset={3} />}
               />
             </Col>
           </Row>
