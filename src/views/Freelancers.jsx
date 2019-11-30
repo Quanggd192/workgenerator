@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Table } from 'react-bootstrap';
 
 import Card from 'components/Card/Card';
+import CustomPagination from 'components/CustomPagination';
 
 export default class Freelancers extends Component {
   render() {
@@ -109,6 +110,7 @@ export default class Freelancers extends Component {
                     </tbody>
                   </Table>
                 }
+                legend={<CustomPagination limit={10} itemsCount={270} offset={3} />}
               />
             </Col>
           </Row>

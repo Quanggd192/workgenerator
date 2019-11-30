@@ -15,22 +15,15 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { Component } from "react";
-import {
-  Grid,
-  Row,
-  Col,
-  FormGroup,
-  ControlLabel,
-  FormControl
-} from "react-bootstrap";
+import React, { Component } from 'react';
+import { Grid, Row, Col, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 
-import { Card } from "components/Card/Card.jsx";
-import { FormInputs } from "components/FormInputs/FormInputs.jsx";
-import { UserCard } from "components/UserCard/UserCard.jsx";
-import Button from "components/CustomButton/CustomButton.jsx";
+import { Card } from 'components/Card/Card';
+import { FormInputs } from 'components/FormInputs/FormInputs';
+import { UserCard } from 'components/UserCard/UserCard';
+import Button from 'components/CustomButton/CustomButton';
 
-import avatar from "assets/img/faces/face-3.jpg";
+import avatar from 'assets/img/faces/face-3.jpg';
 
 class UserProfile extends Component {
   render() {
@@ -44,104 +37,39 @@ class UserProfile extends Component {
                 content={
                   <form>
                     <FormInputs
-                      ncols={["col-md-5", "col-md-3", "col-md-4"]}
+                      ncols={['col-md-12']}
                       properties={[
                         {
-                          label: "Company (disabled)",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Company",
-                          defaultValue: "Creative Code Inc.",
-                          disabled: true
+                          label: 'Username / E-mail',
+                          type: 'text',
+                          bsClass: 'form-control',
+                          placeholder: 'nhactung',
+                          defaultValue: 'nhactung',
+                          disabled: true,
                         },
-                        {
-                          label: "Username",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Username",
-                          defaultValue: "michael23"
-                        },
-                        {
-                          label: "Email address",
-                          type: "email",
-                          bsClass: "form-control",
-                          placeholder: "Email"
-                        }
                       ]}
                     />
                     <FormInputs
-                      ncols={["col-md-6", "col-md-6"]}
+                      ncols={['col-md-6', 'col-md-6']}
                       properties={[
                         {
-                          label: "First name",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "First name",
-                          defaultValue: "Mike"
+                          label: 'First name',
+                          type: 'text',
+                          bsClass: 'form-control',
+                          placeholder: 'First name',
+                          defaultValue: 'Tung',
                         },
                         {
-                          label: "Last name",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Last name",
-                          defaultValue: "Andrew"
-                        }
-                      ]}
-                    />
-                    <FormInputs
-                      ncols={["col-md-12"]}
-                      properties={[
-                        {
-                          label: "Adress",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Home Adress",
-                          defaultValue:
-                            "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                        }
-                      ]}
-                    />
-                    <FormInputs
-                      ncols={["col-md-4", "col-md-4", "col-md-4"]}
-                      properties={[
-                        {
-                          label: "City",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "City",
-                          defaultValue: "Mike"
+                          label: 'Last name',
+                          type: 'text',
+                          bsClass: 'form-control',
+                          placeholder: 'Last name',
+                          defaultValue: 'Nhac',
                         },
-                        {
-                          label: "Country",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Country",
-                          defaultValue: "Andrew"
-                        },
-                        {
-                          label: "Postal Code",
-                          type: "number",
-                          bsClass: "form-control",
-                          placeholder: "ZIP Code"
-                        }
                       ]}
                     />
 
-                    <Row>
-                      <Col md={12}>
-                        <FormGroup controlId="formControlsTextarea">
-                          <ControlLabel>About Me</ControlLabel>
-                          <FormControl
-                            rows="5"
-                            componentClass="textarea"
-                            bsClass="form-control"
-                            placeholder="Here can be your description"
-                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Button bsStyle="info" pullRight fill type="submit">
+                    <Button bsStyle="info" pullRight fill>
                       Update Profile
                     </Button>
                     <div className="clearfix" />
@@ -156,26 +84,26 @@ class UserProfile extends Component {
                 name="Mike Andrew"
                 userName="michael24"
                 description={
-                  <span>
-                    "Lamborghini Mercy
-                    <br />
-                    Your chick she so thirsty
-                    <br />
-                    I'm in that two seat Lambo"
-                  </span>
-                }
-                socials={
-                  <div>
-                    <Button simple>
-                      <i className="fa fa-facebook-square" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-google-plus-square" />
-                    </Button>
-                  </div>
+                  <form className="my-4">
+                    <div className="form-group">
+                      <input type="password" className="form-control" placeholder="New Password" />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        type="password"
+                        className="form-control"
+                        placeholder="Confirm Password"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        type="button"
+                        className="btn btn-sm btn-danger btn-fill pull-right"
+                        value="Change Password"
+                      />
+                    </div>
+                    <div className="clearfix" />
+                  </form>
                 }
               />
             </Col>

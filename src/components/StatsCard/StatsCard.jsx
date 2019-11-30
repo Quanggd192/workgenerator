@@ -15,8 +15,8 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React, { Component } from "react";
-import { Row, Col } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Row, Col } from 'react-bootstrap';
 
 export class StatsCard extends Component {
   render() {
@@ -25,11 +25,9 @@ export class StatsCard extends Component {
         <div className="content">
           <Row>
             <Col xs={5}>
-              <div className="icon-big text-center icon-warning">
-                {this.props.bigIcon}
-              </div>
+              <div className="icon-big text-center icon-warning">{this.props.bigIcon}</div>
             </Col>
-            <Col xs={7}>
+            <Col xs={7} className="pl-0">
               <div className="numbers">
                 <p>{this.props.statsText}</p>
                 {this.props.statsValue}
