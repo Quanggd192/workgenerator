@@ -20,7 +20,6 @@ import Dashboard from 'views/Dashboard';
 // user components
 import UserLoginView from 'views/user/UserLogin';
 import UserRegisterView from 'views/user/UserRegister';
-import UserProfile from 'views/UserProfile';
 import HomePage from 'views/user/Home';
 import AboutUs from 'views/user/AboutUs';
 import ContactUs from 'views/user/ContactUs';
@@ -28,11 +27,13 @@ import UserProfileClinent from 'views/user/UserProfile';
 import ListJob from 'views/user/ListJob';
 import ListCompany from 'views/user/ListCompany';
 import JobDetail from 'views/user/JobDetail';
+import PostAJob from 'views/user/PostAJob';
 
 // admin components
 import Freelancers from 'views/Freelancers';
 import Employers from 'views/Employers';
 import EmployerRequests from 'views/EmployerRequests';
+import UserProfile from 'views/UserProfile';
 
 const dashboardRoutes = [
   // admin
@@ -135,6 +136,12 @@ const dashboardRoutes = [
     name: 'Upgrade to PRO',
     icon: 'pe-7s-rocket',
     component: JobDetail,
+    layout: '',
+  },
+  {
+    upgrade: true,
+    path: '/post-a-job',
+    component: PostAJob,
     layout: '',
   },
   {

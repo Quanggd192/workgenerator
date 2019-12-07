@@ -6,11 +6,11 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:react/recommended",
     "airbnb",
     "prettier",
     "prettier/react",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
+    // "plugin:prettier/recommended",
     "eslint-config-prettier"
   ],
   "globals": {
@@ -47,6 +47,6 @@
         "allowForLoopAfterthoughts": true
       }
     ],
-    "class-methods-use-this": "off",
+    "class-methods-use-this": "off"
   }
 }
