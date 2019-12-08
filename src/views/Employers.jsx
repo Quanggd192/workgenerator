@@ -9,92 +9,152 @@ export default class Employers extends Component {
     super();
 
     this.state = {
-      table: {
+      meta: {
         title: 'Employers Table',
         subtitle: 'You can find all our employers here',
       },
+      data: [
+        {
+          id: 1,
+          name: 'Dakota Rice',
+          email: 'DakotaRice@abc.def',
+          country: 'Niger',
+          openJobs: 6,
+          paidAmount: 3000,
+          status: false,
+        },
+        {
+          id: 2,
+          name: 'Dakota Rice',
+          email: 'DakotaRice@abc.def',
+          country: 'Niger',
+          openJobs: 6,
+          paidAmount: 3000,
+          status: false,
+        },
+        {
+          id: 3,
+          name: 'Dakota Rice',
+          email: 'DakotaRice@abc.def',
+          country: 'Niger',
+          openJobs: 6,
+          paidAmount: 3000,
+          status: true,
+        },
+        {
+          id: 4,
+          name: 'Dakota Rice',
+          email: 'DakotaRice@abc.def',
+          country: 'Niger',
+          openJobs: 6,
+          paidAmount: 3000,
+          status: true,
+        },
+        {
+          id: 5,
+          name: 'Dakota Rice',
+          email: 'DakotaRice@abc.def',
+          country: 'Niger',
+          openJobs: 6,
+          paidAmount: 3000,
+          status: false,
+        },
+        {
+          id: 6,
+          name: 'Dakota Rice',
+          email: 'DakotaRice@abc.def',
+          country: 'Niger',
+          openJobs: 6,
+          paidAmount: 3000,
+          status: true,
+        },
+        {
+          id: 7,
+          name: 'Dakota Rice',
+          email: 'DakotaRice@abc.def',
+          country: 'Niger',
+          openJobs: 6,
+          paidAmount: 3000,
+          status: false,
+        },
+      ],
+      columns: ['ID', 'Name', 'E-mail', 'Open Jobs', 'Country', 'Money Paid', 'Open'],
+      expandedRowIndexes: [],
     };
   }
 
-  render() {
-    const { table } = this.state;
+  expandRow(rowIndex) {
+    const { expandedRowIndexes } = this.state;
+    const newExpandedRowIndexes = expandedRowIndexes.includes(rowIndex)
+      ? expandedRowIndexes.filter(s => s !== rowIndex)
+      : expandedRowIndexes.concat(rowIndex);
 
-    const columns = ['ID', 'Name', 'E-mail', 'Open Jobs', 'Country', 'Money Paid', 'Open'];
+    this.setState({ expandedRowIndexes: newExpandedRowIndexes });
+  }
 
-    const freelancerPropsArr = [
-      {
-        id: 1,
-        name: 'Dakota Rice',
-        email: 'DakotaRice@abc.def',
-        country: 'Niger',
-        openJobs: 6,
-        paidAmount: 3000,
-        status: false,
-      },
-      {
-        id: 2,
-        name: 'Dakota Rice',
-        email: 'DakotaRice@abc.def',
-        country: 'Niger',
-        openJobs: 6,
-        paidAmount: 3000,
-        status: false,
-      },
-      {
-        id: 3,
-        name: 'Dakota Rice',
-        email: 'DakotaRice@abc.def',
-        country: 'Niger',
-        openJobs: 6,
-        paidAmount: 3000,
-        status: true,
-      },
-      {
-        id: 4,
-        name: 'Dakota Rice',
-        email: 'DakotaRice@abc.def',
-        country: 'Niger',
-        openJobs: 6,
-        paidAmount: 3000,
-        status: true,
-      },
-      {
-        id: 5,
-        name: 'Dakota Rice',
-        email: 'DakotaRice@abc.def',
-        country: 'Niger',
-        openJobs: 6,
-        paidAmount: 3000,
-        status: false,
-      },
-      {
-        id: 6,
-        name: 'Dakota Rice',
-        email: 'DakotaRice@abc.def',
-        country: 'Niger',
-        openJobs: 6,
-        paidAmount: 3000,
-        status: true,
-      },
-      {
-        id: 7,
-        name: 'Dakota Rice',
-        email: 'DakotaRice@abc.def',
-        country: 'Niger',
-        openJobs: 6,
-        paidAmount: 3000,
-        status: false,
-      },
+  renderRow(item) {
+    const { expandedRowIndexes } = this.state;
+    const itemExpandableRow = [
+      <tr key={item.id} onClick={() => this.expandRow(item.id)} style={{ cursor: 'pointer' }}>
+        <td>{item.id}</td>
+        <td>{item.name}</td>
+        <td>{item.email}</td>
+        <td>{item.openJobs}</td>
+        <td>{item.country}</td>
+        <td>{item.paidAmount}</td>
+        <td>
+          {item.status ? (
+            <h4 className="m-0">
+              <i className="pe-7s-check text-success" />
+            </h4>
+          ) : (
+            <h4 className="m-0">
+              <i className="pe-7s-close text-danger" />
+            </h4>
+          )}
+        </td>
+      </tr>,
     ];
+
+    if (expandedRowIndexes.includes(item.id)) {
+      itemExpandableRow.push(
+        <tr key={`row-expanded-${item.id}`}>
+          <td colSpan={7}>
+            <Row>
+              <Col sm={4}>
+                <span>Description of it</span> <br />
+                <small className="text-muted">Some other detail</small>
+              </Col>
+              <Col sm={4}>
+                <span>Description of it</span> <br />
+                <small className="text-muted">Some other detail</small>
+              </Col>
+              <Col sm={4}>
+                <span>Description of it</span> <br />
+                <small className="text-muted">Some other detail</small>
+              </Col>
+            </Row>
+          </td>
+        </tr>
+      );
+    }
+
+    return itemExpandableRow;
+  }
+
+  render() {
+    const { meta, data, columns } = this.state;
+    const rows = [];
+    data.forEach(s => rows.push(this.renderRow(s)));
 
     return (
       <div className="content">
         <Grid fluid>
           <Row>
-            <Col md={12}>
+            <Col sm={12}>
               <Card
-                title={table.title}
-                category={table.subtitle}
+                title={meta.title}
+                category={meta.subtitle}
                 ctTableFullWidth
                 ctTableResponsive
                 content={
@@ -106,37 +166,7 @@ export default class Employers extends Component {
                         })}
                       </tr>
                     </thead>
-                    <tbody>
-                      {freelancerPropsArr.map((prop, key) => {
-                        return (
-                          <tr
-                            key={prop.id}
-                            data-toggle="collapse"
-                            data-target={`#row-${key}-detail`}
-                            aria-expanded="false"
-                            aria-controls="collapseExample"
-                          >
-                            <td>{prop.id}</td>
-                            <td>{prop.name}</td>
-                            <td>{prop.email}</td>
-                            <td>{prop.openJobs}</td>
-                            <td>{prop.country}</td>
-                            <td>{prop.paidAmount}</td>
-                            <td>
-                              {prop.status ? (
-                                <h4 className="m-0">
-                                  <i className="pe-7s-check text-success" />
-                                </h4>
-                              ) : (
-                                <h4 className="m-0">
-                                  <i className="pe-7s-close text-danger" />
-                                </h4>
-                              )}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
+                    <tbody>{rows}</tbody>
                   </Table>
                 }
                 legend={<CustomPagination limit={10} itemsCount={270} offset={3} />}

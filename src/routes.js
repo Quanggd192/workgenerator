@@ -16,29 +16,24 @@
 
 */
 import Dashboard from 'views/Dashboard';
-import TableList from 'views/TableList';
-import Typography from 'views/Typography';
-import Icons from 'views/Icons';
-import Maps from 'views/Maps';
-import Notifications from 'views/Notifications';
-import Upgrade from 'views/Upgrade';
 
 // user components
-import UserLoginView from "views/user/UserLogin"
-import UserRegisterView from "views/user/UserRegister"
-import UserProfile from 'views/UserProfile';
-import HomePage from "views/user/Home"
-import AboutUs from "views/user/AboutUs"
-import ContactUs from "views/user/ContactUs"
-import UserProfileClinent from "views/user/UserProfile"
-import ListJob from "views/user/ListJob"
-import ListCompany from "views/user/ListCompany"
-import JobDetail from "views/user/JobDetail"
+import UserLoginView from 'views/user/UserLogin';
+import UserRegisterView from 'views/user/UserRegister';
+import HomePage from 'views/user/Home';
+import AboutUs from 'views/user/AboutUs';
+import ContactUs from 'views/user/ContactUs';
+import UserProfileClinent from 'views/user/UserProfile';
+import ListJob from 'views/user/ListJob';
+import ListCompany from 'views/user/ListCompany';
+import JobDetail from 'views/user/JobDetail';
+import PostAJob from 'views/user/PostAJob';
 
 // admin components
 import Freelancers from 'views/Freelancers';
 import Employers from 'views/Employers';
 import EmployerRequests from 'views/EmployerRequests';
+import UserProfile from 'views/UserProfile';
 
 const dashboardRoutes = [
   // admin
@@ -113,41 +108,47 @@ const dashboardRoutes = [
   },
   {
     upgrade: true,
-    path: "/jobs",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/jobs',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: ListJob,
-    layout: ""
+    layout: '',
   },
   {
     upgrade: true,
-    path: "/companies",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/companies',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: ListCompany,
-    layout: ""
+    layout: '',
   },
   {
     upgrade: true,
-    path: "/profile",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/profile',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: UserProfileClinent,
-    layout: ""
+    layout: '',
   },
   {
     upgrade: true,
-    path: "/job-detail",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/job-detail',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: JobDetail,
-    layout: ""
+    layout: '',
   },
   {
     upgrade: true,
-    path: "/",
-    name: "Upgrade to PRO",
-    icon: "pe-7s-rocket",
+    path: '/post-a-job',
+    component: PostAJob,
+    layout: '',
+  },
+  {
+    upgrade: true,
+    path: '/',
+    name: 'Upgrade to PRO',
+    icon: 'pe-7s-rocket',
     component: HomePage,
     layout: '',
   },
